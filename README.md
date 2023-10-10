@@ -11,4 +11,4 @@ En esta lista encontrarás una recopilación de videos donde estoy aprendiendo s
 
 | # | Proyecto                                | Código                                                | Web                                 |
 |---|----------------------------------------|-------------------------------------------------------|-------------------------------------|
-| 1 | CRUD - API Context y TailwindCSS       | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs) | [Visitar](https://app-crud-nextjs.vercel.app) |
+| `01` | CRUD - API Context y TailwindCSS       | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs) | [Visitar](https://app-crud-nextjs.vercel.app) |
