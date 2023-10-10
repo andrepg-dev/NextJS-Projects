@@ -11,8 +11,8 @@
   <li>01: <a href="https://youtu.be/Ac9J_yyQqOI?si=JZ_mzV_NSRPS7qjs">CRUD con LocalStorage, API Context y TailwindCSS</a></li>
 </ul>
 
-## Proyectos
+## 💻 Proyectos de Next.js con código
 
 | # | Proyecto                                | Código                                                | Web                                 |
 |---|----------------------------------------|-------------------------------------------------------|-------------------------------------|
-| 1 | CRUD - API Context y TailwindCSS       | [Ver Código](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs) | [Visitar la Web](https://app-crud-nextjs.vercel.app) |
+| 1 | CRUD - API Context y TailwindCSS       | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs) | [Visitar](https://app-crud-nextjs.vercel.app) |
