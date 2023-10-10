@@ -1,4 +1,8 @@
-# Aprendiendo Next.js 🌚
+[![Nextjs](Address "Nextjs")](https://raw.githubusercontent.com/AndrePonce3322/curso-nextjs/main/nextjs.webp "Nextjs")
+
+<h1 align="center">
+ Aprendiendo Next.js 🌚
+</h1>
 
 En esta lista encontrarás una recopilación de videos donde estoy aprendiendo sobre  **Next.js**., una tecnología fascinante para el desarrollo web. Estos videos abarcan una variedad de temas relacionados con Next.js y son presentados por diferentes Streamers/YouTubers.
 
