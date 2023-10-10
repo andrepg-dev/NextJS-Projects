@@ -1,4 +1,4 @@
-<div style="display:flex; justify-content:center;">
+<div align="center">
 <img src="https://raw.githubusercontent.com/AndrePonce3322/curso-nextjs/main/nextjs.png" width="500" />
 </div>
 
