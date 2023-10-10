@@ -1,8 +1,8 @@
 # NextJS - Curso
 
-<ol>
-  <li>CRUD con LocalStorage, API Context y TailwindCSS</li>
-</ol>
+<ul>
+  <li>01: <a href="https://youtu.be/Ac9J_yyQqOI?si=JZ_mzV_NSRPS7qjs">CRUD con LocalStorage, API Context y TailwindCSS</a></li>
+</ul>
 
 ## Proyectos
 
