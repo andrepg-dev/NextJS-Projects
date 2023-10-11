@@ -1,11 +1,21 @@
 import { TaskContext } from '@/context/taskContext';
 import Link from 'next/link';
 import { useContext } from 'react';
+import { toast } from 'sonner';
+import { IconCircleCheckFilled } from '@/icons/icons';
 
 export const TaskCard = ({ task }) => {
   const { deleteTask } = useContext(TaskContext);
 
   const handleClick = ({ id }) => {
+    toast('Task deleted succesfully 🗑️', {
+      style: {
+        background: 'black',
+        border: '1px white solid',
+        color: 'white',
+      },
+      icon: <IconCircleCheckFilled height={22} />,
+    });
     return deleteTask(id);
   };
 

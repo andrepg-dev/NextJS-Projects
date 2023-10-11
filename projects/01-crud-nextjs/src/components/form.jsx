@@ -2,6 +2,8 @@
 import { TaskContext } from '../context/taskContext';
 import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+import { IconCircleCheckFilled } from '@/icons/icons';
 
 export function Form({ params }) {
   const { CreateTask, editTask, tasks } = useContext(TaskContext);
@@ -39,10 +41,21 @@ export function Form({ params }) {
       };
 
       editTask(bodyToSend);
+      toast('Task has been edited! ✏️', {
+        style: {
+          background: '#172554',
+          color: '#bfdbfe',
+          border: '1px #bfdbfe solid',
+        },
+        icon: <IconCircleCheckFilled height={22} />,
+      });
       return router.push('/');
     }
     // Enviar los valores del task en formato JSON
     CreateTask(task);
+    toast.success('Task has been created!', {
+      icon: <IconCircleCheckFilled height={22} />,
+    });
     // Irse a la ruta
     return router.push('/');
   };

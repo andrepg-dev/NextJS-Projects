@@ -1,6 +1,7 @@
 import './globals.css';
 import { TaskProvider } from '../context/taskContext';
 import { Inter } from 'next/font/google';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <TaskProvider>{children}</TaskProvider>
+        <TaskProvider>
+          {children}
+          <Toaster richColors position='top-right' closeButton theme='dark'/>
+        </TaskProvider>
       </body>
     </html>
   );
