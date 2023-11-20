@@ -59,7 +59,7 @@ export default function CreateTwio() {
         };
 
         // Send data to firestorage and redirect to home
-        return await AddTweet(bodyToSend).then(() => {
+        return await AddTwio(bodyToSend).then(() => {
           setState(COMPOSE_STATE.SUCCESS);
           router.replace('/home');
         });
