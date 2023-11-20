@@ -11,7 +11,6 @@ export const TwioContextProvider = ({ children }) => {
   const [twios, setTwios] = useState([]);
 
   useEffect(() => {
-    console.log('Uso');
     let unsub;
 
     if (user) {

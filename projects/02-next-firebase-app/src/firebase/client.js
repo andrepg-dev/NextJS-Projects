@@ -145,8 +145,6 @@ async function GetTwiosByUser({ userid }) {
 const listenLastTwios = (callback) => {
   const q = query(TwioCollection);
 
-  console.log('listenLastTwios');
-
   return onSnapshot(q, (querySnapshot) => {
     const docs = [];
     querySnapshot.forEach((doc) => {

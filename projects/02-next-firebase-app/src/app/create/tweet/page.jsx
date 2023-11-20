@@ -129,7 +129,7 @@ export default function CreateTwio() {
   ) : (
     <main className='w-full min-h-[100svh] bg-black px-5 py-4 text-white flex flex-col gap-4'>
       <div className='w-full flex justify-between'>
-        <Link href={`/home`}>
+        <Link href='/home'>
           <IconArrowLeft
             className={'w-[20px] h-[20px] text-white fill-white '}
           />
