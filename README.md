@@ -2,11 +2,11 @@
 <img src="https://raw.githubusercontent.com/AndrePonce3322/curso-nextjs/main/nextjs.png" width="500" />
 </div>
 
-<h1 align="center">
- Aprendiendo Next.js 🌚
+<h1 align="center" style="display:flex; justify-content:center; gap: 0.3rem;">
+ Aprendiendo Next.js <img style="padding-top: 5px;" src="https://raw.githubusercontent.com/AndrePonce3322/curso-nextjs/cd5e5c8017f5d5991b1973350564605d4a9adb75/nextjs-icon.svg"/>
 </h1>
 
-En esta lista encontrarás una recopilación de videos donde estoy aprendiendo sobre  **Next.js**., una tecnología fascinante para el desarrollo web. Estos videos abarcan una variedad de temas relacionados con Next.js y son presentados por diferentes Streamers/YouTubers.
+En esta lista encontrarás una recopilación de videos donde estoy aprendiendo sobre  **Next.js**, una tecnología fascinante para el desarrollo web. Estos videos abarcan una variedad de temas relacionados con Next.js y son presentados por diferentes Streamers/YouTubers.
 
 ## 📹 Videos con las clases
 **La lista que verás a continuación corresponde a los videos que he visto hasta el momento:**
