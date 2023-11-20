@@ -39,7 +39,7 @@ export const Form = () => {
         </div>
 
         <div className='flex flex-col'>
-          <h1 className='text-lg font-bold'>Next.js on Twitter </h1>
+          <h1 className='text-lg font-bold'>Twitter on Next.js </h1>
           <h2>
             Talk about development <br />
             with developers 🧑🏼‍💻
