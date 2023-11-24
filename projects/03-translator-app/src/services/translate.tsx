@@ -16,7 +16,5 @@ export const translate = async ({ text, from, to }: TranslationProps) => {
 
   // [ [resultado 1], [resultado 2] ]
   const result = data[0].map((item: any) => item[0]).join('');
-  console.log(data[0].length);
-
   return result;
 };

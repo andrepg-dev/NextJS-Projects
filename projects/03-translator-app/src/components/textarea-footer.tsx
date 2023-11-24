@@ -9,10 +9,14 @@ interface props {
 
 export const TextAreaFooter = ({ result, lang }: props) => {
   // Speech Synthesis
-  const navigator_sppech = new SpeechSynthesisUtterance();
+  let navigator_sppech: any;
+
+  if (typeof window !== 'undefined') {
+    navigator_sppech = new SpeechSynthesisUtterance();
+  }
 
   const handleHearSound = (text: string, lang: Lang_Symbols) => {
-    if (!text || speechSynthesis.speaking) return;
+    if (typeof window === 'undefined' || !text || speechSynthesis.speaking) return;
 
     navigator_sppech.lang = lang;
     navigator_sppech.text = text;
