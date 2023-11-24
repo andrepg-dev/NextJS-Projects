@@ -16,7 +16,7 @@ export const TextAreaFooter = ({ result, lang }: props) => {
   const [isCopied, setIsCopied] = useState(false);
 
   return (
-    <footer className='absolute bottom-2 left-2 cursor-pointer flex gap-1'>
+    <footer className='absolute bottom-2 left-2 cursor-pointer flex'>
       <Button
         variant={'ghost'}
         onClick={() => handleCopy(result, setIsCopied)}
@@ -28,7 +28,7 @@ export const TextAreaFooter = ({ result, lang }: props) => {
       </Button>
       <Button
         variant={'ghost'}
-        size={'icon'}
+        size={'sm'}
         title='Escuchar'
         onClick={() => handleHearSound(result, lang, setIsSpeaking)}
       >
