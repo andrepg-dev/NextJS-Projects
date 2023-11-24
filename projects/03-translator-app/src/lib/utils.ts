@@ -26,19 +26,3 @@ export const getValue = (type: SectionType, value?: string, text?: string) => {
   return text;
 };
 
-// Speech Synthesis
-const navigator_sppech = new SpeechSynthesisUtterance();
-
-export const handleHearSound = (text: string, lang: Lang_Symbols) => {
-  if (!text || speechSynthesis.speaking) return;
-
-  navigator_sppech.lang = lang;
-  navigator_sppech.text = text;
-  navigator_sppech.rate = 0.8;
-
-  speechSynthesis.speak(navigator_sppech);
-};
-
-export const handleCopy = (text: string) => {
-  navigator.clipboard.writeText(text);
-};
