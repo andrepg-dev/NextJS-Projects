@@ -39,8 +39,9 @@ export const handleHearSound = (
   lang: Lang_Symbols,
   callback: (type: string) => void
 ) => {
-  if (typeof window === 'undefined' || !text || speechSynthesis.speaking)
-    return;
+  if (typeof window === 'undefined' || !text) return;
+  if(speechSynthesis.speaking) return speechSynthesis.cancel();
+
   callback(SPEAKER_STATE.loading);
 
   // On start
