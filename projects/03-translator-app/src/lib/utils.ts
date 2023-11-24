@@ -63,6 +63,7 @@ export const handleCopy = (
   text: string,
   callback: (boolean: boolean) => void
 ) => {
+  if (!text) return;
   navigator.clipboard.writeText(text).then(() => {
     callback(true);
 
