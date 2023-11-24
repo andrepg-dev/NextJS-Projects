@@ -1,5 +1,6 @@
 import { Lang_Symbols } from '@/app/languages.d';
 import { SectionType } from '@/app/types';
+import { SPEAKER_STATE } from '@/components/textarea-footer';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -36,20 +37,25 @@ if (typeof window !== 'undefined') {
 export const handleHearSound = (
   text: string,
   lang: Lang_Symbols,
-  callback: (boolean: boolean) => void
+  callback: (type: string) => void
 ) => {
   if (typeof window === 'undefined' || !text || speechSynthesis.speaking)
     return;
-  callback(true);
+  callback(SPEAKER_STATE.loading);
+
+  // On start
+  navigator_sppech.onstart = () => {
+    callback(SPEAKER_STATE.ON);
+  };
 
   // On end
   navigator_sppech.onend = () => {
-    callback(false);
+    callback(SPEAKER_STATE.OFF);
   };
 
   // On error
   navigator_sppech.onerror = () => {
-    callback(false);
+    callback(SPEAKER_STATE.OFF);
   };
 
   navigator_sppech.lang = lang;
