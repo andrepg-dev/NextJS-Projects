@@ -3,7 +3,7 @@ export const GithubRepo = () => {
     <a
       href='https://github.com/AndrePonce3322/curso-nextjs'
       target='_blank'
-      className='absolute hover:translate-x-0 transition -translate-x-4 top-0 left-0 text-[#000] flex gap-1 items-center opacity-40 hover:opacity-100 select-none'
+      className='absolute transition top-0 right-0 text-[#000] flex items-center opacity-40 hover:opacity-100 select-none'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -16,7 +16,6 @@ export const GithubRepo = () => {
           fill='currentColor'
         />
       </svg>
-      <span className='text-sm font-medium'>GitHub repository</span>
     </a>
   );
 };
