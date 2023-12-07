@@ -55,11 +55,11 @@ export default function Home() {
           <SelectLanguage value={to} entries={entries} onChanges={setTo} />
         </section>
 
-        <section className='w-full flex flex-col'>
-          <div className='relative'>
+        <section className='w-full flex flex-col md:flex-row md:gap-3'>
+          <div className='relative md:w-full'>
             <TextArea type='from' onChange={setText} value={text} lang={from} />
           </div>
-          <div className='relative'>
+          <div className='relative md:w-full'>
             <TextArea
               type='to'
               loading={loading}
