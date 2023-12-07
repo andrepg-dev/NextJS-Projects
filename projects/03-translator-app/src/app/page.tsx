@@ -55,7 +55,7 @@ export default function Home() {
           <SelectLanguage value={to} entries={entries} onChanges={setTo} />
         </section>
 
-        <section className='w-full flex flex-col md:flex-row md:gap-3'>
+        <section className='w-full flex flex-col md:flex-row md:gap-[3rem]'>
           <div className='relative md:w-full'>
             <TextArea type='from' onChange={setText} value={text} lang={from} />
           </div>
