@@ -40,7 +40,7 @@ export const handleHearSound = (
   callback: (type: string) => void
 ) => {
   if (typeof window === 'undefined' || !text) return;
-  if(speechSynthesis.speaking) return speechSynthesis.cancel();
+  if (speechSynthesis.speaking) return speechSynthesis.cancel();
 
   callback(SPEAKER_STATE.loading);
 

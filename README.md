@@ -18,8 +18,9 @@ En esta lista encontrarás una recopilación de videos donde estoy aprendiendo s
 
 ## 💻 Proyectos de Next.js con código
 
-| #    | Proyecto                                                                | Código                                                                                        | Web                                           |
-| ---- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `01` | CRUD - API Context y TailwindCSS                                        | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs)       | [Visitar](https://app-crud-nextjs.vercel.app) |
-| `02` | Twitter Clone - Firebase, TailwindCSS, GitHub Authentication, env files | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/02-next-firebase-app) | [Visitar](https://twios.vercel.app)    |
-| `03` | Google Translate Clone - TypeScript, Google API, TailwindCSS | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/03-translator-app) | [Visitar](https://go-translator.vercel.app)    |
+| #    | Proyecto                                                                     | Código                                                                                        | Web                                           |
+| ---- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `01` | CRUD - API Context y TailwindCSS                                             | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/01-crud-nextjs)       | [Visitar](https://app-crud-nextjs.vercel.app) |
+| `02` | Twitter Clone - Firebase, TailwindCSS, GitHub Authentication, env files      | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/02-next-firebase-app) | [Visitar](https://twios.vercel.app)           |
+| `03` | Google Translate Clone - TypeScript, Google API, TailwindCSS                 | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/03-translator-app)    | [Visitar](https://go-translator.vercel.app)   |
+| `04` | Ecommerce CZMobile Clone- React Redux, TypeScript, TailwindCSS, ReduxToolkit | [Ver](https://github.com/AndrePonce3322/curso-nextjs/tree/main/projects/04-ecommerce-react-redux)    | [Visitar](https://czmobile.vercel.app)   |
