@@ -85,7 +85,23 @@ export const Lang_Symbols_COUNTRIES = {
   tr: 'Turco',
   ru: 'Ruso',
   no: 'Noruego',
-};
+}
 
-export type Lang_Symbols = keyof typeof Lang_Symbols_COUNTRIES;
-export const entries = Object.entries(Lang_Symbols_COUNTRIES);
+let sortable = []
+export type Lang_Symbols = keyof typeof Lang_Symbols_COUNTRIES
+
+for (var lang in Lang_Symbols_COUNTRIES) {
+  sortable.push([lang, Lang_Symbols_COUNTRIES[lang as Lang_Symbols]])
+}
+
+sortable.sort((a: any, b: any) => {
+  return a[1] - b[1]
+})
+
+let objSorted: { [key: string]: string } = {}
+
+sortable.forEach(function (item: any) {
+  objSorted[item[0]] = item[1]
+})
+
+export const entries = Object.entries(objSorted)

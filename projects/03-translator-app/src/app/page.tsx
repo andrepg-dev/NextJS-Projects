@@ -1,35 +1,48 @@
-'use client';
+'use client'
 
-import { GoogleLogo } from '@/components/google-logo';
-import { IconInterChange } from '@/components/icon';
-import { SelectLanguage } from '@/components/select';
-import { TextArea } from '@/components/textarea';
-import { TextAreaFooter } from '@/components/textarea-footer';
-import { Button } from '@/components/ui/button';
-import { useStore } from '@/hooks/useStore';
-import { saveLangToLocalStorage } from '@/services/save-lang';
-import { translate } from '@/services/translate';
-import { useEffect } from 'react';
-import { entries } from './languages.d';
-import { GithubRepo } from '@/components/github-repo';
+import { GoogleLogo } from '@/components/google-logo'
+import { IconInterChange } from '@/components/icon'
+import { SelectLanguage } from '@/components/select'
+import { TextArea } from '@/components/textarea'
+import { TextAreaFooter } from '@/components/textarea-footer'
+import { Button } from '@/components/ui/button'
+import { useStore } from '@/hooks/useStore'
+import { saveLangToLocalStorage } from '@/services/save-lang'
+import { translate } from '@/services/translate'
+import { useCallback, useEffect } from 'react'
+import { entries } from './languages.d'
+import { GithubRepo } from '@/components/github-repo'
+import Link from 'next/link'
 
 export default function Home() {
-  const { state, actions } = useStore();
-  const { setFrom, setTo, interchangeLanguages, setResult, setText } = actions;
-  const { from, to, loading, text, result } = state;
+  const { state, actions } = useStore()
+  const { setFrom, setTo, interchangeLanguages, setResult, setText } = actions
+  const { from, to, loading, text, result } = state
 
   useEffect(() => {
     const fetch = async () => {
-      const result = await translate({ text, from, to });
-      setResult(result);
-    };
+      const result = await translate({ text, from, to })
+      setResult(result)
+    }
 
-    fetch();
-  }, [text, from, to]);
+    fetch()
+  }, [text, from, to])
 
   useEffect(() => {
-    saveLangToLocalStorage({ lang: { from, to } });
-  }, [from]);
+    saveLangToLocalStorage({ lang: { from, to } })
+  }, [from])
+
+  const handlePressEvent = useCallback((event: KeyboardEvent) => {
+    if (event.ctrlKey && event.key.toLowerCase() == 'k') {
+      event.preventDefault()
+      interchangeLanguages()
+    }
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('keydown', handlePressEvent)
+    return () => window.removeEventListener('keydown', handlePressEvent)
+  }, [])
 
   return (
     <main className='h-[100svh] relative flex justify-center items-center flex-col gap-2'>
@@ -73,8 +86,10 @@ export default function Home() {
       </div>
 
       <footer className='absolute bottom-4 left-4 text-[12px] opacity-50'>
-        Desarrollado por André {'</>'}
+        <Link href={'https://andrepg.vercel.app'} target='_blank'>
+          Desarrollado por André {'</>'}
+        </Link>
       </footer>
     </main>
-  );
+  )
 }
