@@ -33,7 +33,7 @@ export default function Home() {
   }, [from])
 
   const handlePressEvent = useCallback((event: KeyboardEvent) => {
-    if (event.ctrlKey && event.key.toLowerCase() == 'k') {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() == 'k') {
       event.preventDefault()
       interchangeLanguages()
     }
