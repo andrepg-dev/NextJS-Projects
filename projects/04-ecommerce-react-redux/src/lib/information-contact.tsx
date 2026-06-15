@@ -28,7 +28,7 @@ function CreateContactInfo(
     {
       title: 'Email',
       content: [
-        <a href='mailto:motor@stockware.ru' className='hover:border-b  '>
+        <a key='email-link' href='mailto:motor@stockware.ru' className='hover:border-b  '>
           @info@czmobile.com
         </a>,
       ],
