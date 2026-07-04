@@ -30,14 +30,14 @@ export default function Home() {
 
   useEffect(() => {
     saveLangToLocalStorage({ lang: { from, to } })
-  }, [from])
+  }, [from, to])
 
   const handlePressEvent = useCallback((event: KeyboardEvent) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() == 'k') {
       event.preventDefault()
-      interchangeLanguages()
+      if (from !== 'auto') interchangeLanguages()
     }
-  }, [])
+  }, [from, interchangeLanguages])
 
   useEffect(() => {
     window.addEventListener('keydown', handlePressEvent)
@@ -54,18 +54,27 @@ export default function Home() {
         </header>
 
         <section className='flex gap-2 rounded justify-between'>
-          <SelectLanguage value={from} entries={entries} onChanges={setFrom} />
+          <SelectLanguage
+            value={from}
+            entries={entries}
+            onChanges={setFrom}
+            allowAuto
+          />
 
           <Button
             variant='ghost'
             size='icon'
             className='px-2 disabled:opacity-50'
             onClick={interchangeLanguages}
-            disabled={to === from}
+            disabled={from === 'auto' || to === from}
           >
             <IconInterChange width={20} />
           </Button>
-          <SelectLanguage value={to} entries={entries} onChanges={setTo} />
+          <SelectLanguage
+            value={to}
+            entries={entries}
+            onChanges={(lang) => setTo(lang as typeof to)}
+          />
         </section>
 
         <section className='w-full flex flex-col md:flex-row md:gap-[3rem]'>

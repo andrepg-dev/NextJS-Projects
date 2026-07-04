@@ -1,14 +1,14 @@
 'use client';
 
 import { Lang_Symbols } from '@/app/languages.d';
-import { type Action, type State } from '@/app/types';
+import type { Action, FromLanguage, State } from '@/app/types';
 import { getLangToLocalStorage } from '@/services/save-lang';
 import { useReducer } from 'react';
 
 const { from, to } = getLangToLocalStorage();
 
 const initialState: State = {
-  from: from || 'en',
+  from: from || 'auto',
   to: to || 'es',
   text: '',
   result: '',
@@ -19,6 +19,8 @@ function reducer(state: State, action: Action) {
   const { type } = action;
 
   if (type === 'INTERCHANGE_LANGUAGES') {
+    if (state.from === 'auto') return state;
+
     return {
       ...state,
       from: state.to,
@@ -69,7 +71,7 @@ export function useStore() {
     setText: (text: string) => dispatch({ type: 'SET_TEXT', payload: text }),
     setResult: (result: string) =>
       dispatch({ type: 'SET_RESULT', payload: result }),
-    setFrom: (lang: Lang_Symbols) =>
+    setFrom: (lang: FromLanguage) =>
       dispatch({ type: 'SET_FROM_LANGUAGE', payload: lang }),
     setTo: (lang: Lang_Symbols) =>
       dispatch({ type: 'SET_TO_LANGUAGE', payload: lang }),

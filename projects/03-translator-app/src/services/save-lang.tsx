@@ -1,12 +1,13 @@
 'use client'
 
 import { Lang_Symbols } from '@/app/languages.d'
+import type { FromLanguage } from '@/app/types'
 
 // Save the language to local storage
 export function saveLangToLocalStorage({
   lang,
 }: {
-  lang: { from: Lang_Symbols; to: Lang_Symbols }
+  lang: { from: FromLanguage; to: Lang_Symbols }
 }) {
   const data = JSON.stringify(lang)
   localStorage.setItem('lang', data)

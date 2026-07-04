@@ -1,6 +1,6 @@
 'use client';
 
-import { Lang_Symbols } from '@/app/languages.d';
+import type { FromLanguage } from '@/app/types';
 import {
   Command,
   CommandEmpty,
@@ -16,17 +16,31 @@ import { Check, ChevronsUpDown } from 'lucide-react';
 import { useState } from 'react';
 
 interface Props {
-  onChanges: (event: Lang_Symbols) => void;
+  onChanges: (event: FromLanguage) => void;
   value: string;
   entries: [string, string][];
+  allowAuto?: boolean;
 }
 
-export const SelectLanguage = ({ onChanges, value, entries }: Props) => {
-  const [open, setOpen] = useState(false);
-  const selectedLanguage = entries.find(([key]) => key === value)?.[1];
+const AUTO_LANGUAGE_ENTRY: [FromLanguage, string] = ['auto', 'Detectar idioma'];
 
-  const handleChange = (event: Lang_Symbols) => {
+export const SelectLanguage = ({
+  onChanges,
+  value,
+  entries,
+  allowAuto = false,
+}: Props) => {
+  const [open, setOpen] = useState(false);
+  const languageEntries = allowAuto
+    ? [AUTO_LANGUAGE_ENTRY, ...entries]
+    : entries;
+  const selectedLanguage = languageEntries.find(([key]) => key === value)?.[1];
+
+  const handleChange = (event: FromLanguage) => {
+    if (event === 'auto' && !allowAuto) return;
+
     onChanges(event);
+
     setOpen(false);
   };
 
@@ -52,11 +66,11 @@ export const SelectLanguage = ({ onChanges, value, entries }: Props) => {
           <CommandList>
             <CommandEmpty>No se encontró ese idioma.</CommandEmpty>
             <CommandGroup>
-              {entries.map(([key, label]) => (
+              {languageEntries.map(([key, label]) => (
                 <CommandItem
                   key={key}
                   value={`${label} ${key}`}
-                  onSelect={() => handleChange(key as Lang_Symbols)}
+                  onSelect={() => handleChange(key as FromLanguage)}
                   className='cursor-pointer justify-between'
                 >
                   <span>{label}</span>
