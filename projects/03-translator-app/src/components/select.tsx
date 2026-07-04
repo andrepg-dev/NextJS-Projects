@@ -38,7 +38,7 @@ export const SelectLanguage = ({ onChanges, value, entries }: Props) => {
           role='combobox'
           aria-expanded={open}
           aria-label='Seleccionar idioma'
-          className='w-full justify-between gap-2 rounded-xl border-slate-200 bg-white/90 px-3 text-slate-800 shadow-sm hover:bg-white'
+          className='w-full justify-between gap-2 font-normal'
         >
           <span className='truncate text-left'>
             {selectedLanguage ?? 'Seleccionar idioma'}
