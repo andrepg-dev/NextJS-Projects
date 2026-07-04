@@ -3,7 +3,7 @@
 import { Lang_Symbols } from '@/app/languages.d';
 import type { Action, FromLanguage, State } from '@/app/types';
 import { getLangToLocalStorage } from '@/services/save-lang';
-import { useReducer } from 'react';
+import { useCallback, useMemo, useReducer } from 'react';
 
 const { from, to } = getLangToLocalStorage();
 
@@ -66,16 +66,33 @@ function reducer(state: State, action: Action) {
 export function useStore() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const actions = {
-    interchangeLanguages: () => dispatch({ type: 'INTERCHANGE_LANGUAGES' }),
-    setText: (text: string) => dispatch({ type: 'SET_TEXT', payload: text }),
-    setResult: (result: string) =>
-      dispatch({ type: 'SET_RESULT', payload: result }),
-    setFrom: (lang: FromLanguage) =>
+  const interchangeLanguages = useCallback(
+    () => dispatch({ type: 'INTERCHANGE_LANGUAGES' }),
+    []
+  );
+  const setText = useCallback(
+    (text: string) => dispatch({ type: 'SET_TEXT', payload: text }),
+    []
+  );
+  const setResult = useCallback(
+    (result: string) => dispatch({ type: 'SET_RESULT', payload: result }),
+    []
+  );
+  const setFrom = useCallback(
+    (lang: FromLanguage) =>
       dispatch({ type: 'SET_FROM_LANGUAGE', payload: lang }),
-    setTo: (lang: Lang_Symbols) =>
+    []
+  );
+  const setTo = useCallback(
+    (lang: Lang_Symbols) =>
       dispatch({ type: 'SET_TO_LANGUAGE', payload: lang }),
-  };
+    []
+  );
+
+  const actions = useMemo(
+    () => ({ interchangeLanguages, setText, setResult, setFrom, setTo }),
+    [interchangeLanguages, setText, setResult, setFrom, setTo]
+  );
 
   const handleText = (result: string) => {
     dispatch({ type: 'SET_TEXT', payload: result });

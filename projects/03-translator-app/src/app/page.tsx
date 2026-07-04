@@ -34,6 +34,14 @@ export default function Home() {
 
   const handlePressEvent = useCallback((event: KeyboardEvent) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() == 'k') {
+      const target = event.target as HTMLElement | null
+      const isTyping =
+        target?.tagName === 'INPUT' ||
+        target?.tagName === 'TEXTAREA' ||
+        target?.isContentEditable
+
+      if (isTyping) return
+
       event.preventDefault()
       if (from !== 'auto') interchangeLanguages()
     }
@@ -42,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     window.addEventListener('keydown', handlePressEvent)
     return () => window.removeEventListener('keydown', handlePressEvent)
-  }, [])
+  }, [handlePressEvent])
 
   return (
     <main className='h-[100svh] relative flex justify-center items-center flex-col gap-2'>
