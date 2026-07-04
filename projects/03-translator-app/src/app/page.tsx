@@ -35,14 +35,13 @@ export default function Home() {
   const handlePressEvent = useCallback((event: KeyboardEvent) => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() == 'k') {
       const target = event.target as HTMLElement | null
-      const isTyping =
-        target?.tagName === 'INPUT' ||
-        target?.tagName === 'TEXTAREA' ||
-        target?.isContentEditable
+      const isSearchInput =
+        target?.tagName === 'INPUT' || target?.isContentEditable
 
-      if (isTyping) return
+      if (isSearchInput) return
 
       event.preventDefault()
+
       if (from !== 'auto') interchangeLanguages()
     }
   }, [from, interchangeLanguages])
